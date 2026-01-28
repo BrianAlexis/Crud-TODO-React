@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# 📝 TaskMaster - CRUD TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi aplicación de tareas! Este proyecto es un CRUD (Create, Read, Update, Delete) construido con **React** y **TypeScript**, enfocado en una arquitectura limpia y una experiencia de usuario interactiva mediante sonidos.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Gestión Completa de Tareas**: Crea, marca como completadas y elimina tareas de forma sencilla.
+- **Feedback Auditivo**: Sonidos de tecleo al escribir y sonido de éxito al añadir tareas.
+- **Arquitectura Limpia**: Lógica separada en **Custom Hooks** (`useTodos`, `useSound`) y UI dividida en componentes reutilizables.
+- **Contador Dinámico**: Visualización en tiempo real de tareas pendientes.
+- **Persistencia**: Tus tareas se guardan en el `localStorage` (próximamente).
+- **Diseño Moderno**: Interfaz estilizada con **Tailwind CSS**.
 
-## React Compiler
+## 🛠️ Tecnologías Usadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- [React.js](https://reactjs.org/) - Biblioteca para la interfaz de usuario.
+- [TypeScript](https://www.typescriptlang.org/) - Para un código más seguro y robusto.
+- [Tailwind CSS](https://tailwindcss.com/) - Para el diseño responsivo y moderno.
+- [Vite](https://vitejs.dev/) - Herramienta de construcción ultrarrápida.
 
-## Expanding the ESLint configuration
+## 📦 Visualización
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Para visualizar correctamente este proyecto haz click en el link a la derecha de este repositorio.**
