@@ -5,6 +5,9 @@ import { useSound } from './useSound';
 export const useTodos = () => {
     const [input, setInput] = useState("")
     const [todos, setTodos] = useState<Todo[]>([]);
+    const completedCount = todos.filter(todo => todo.completed).length;
+
+    // Sounds
     const keyboardTypingSound = useSound('/sounds/keyboard_typing.mp3');
     const addNewTodoSound = useSound('/sounds/success.mp3');
     const trashSound = useSound('/sounds/trash.mp3');
@@ -66,6 +69,7 @@ export const useTodos = () => {
         deleteTodo,
         toggleTodo,
         counterPendingTasks,
-        deletePendingTask
+        deletePendingTask,
+        completedCount
     };
 };

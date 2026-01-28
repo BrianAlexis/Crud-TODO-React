@@ -3,22 +3,17 @@ import { useTodos } from "./hooks/useTodo";
 
 
 const App: React.FC = () => {
-  const { input, todos, inputText, addTodo, deleteTodo, toggleTodo, counterPendingTasks, deletePendingTask } = useTodos();
+  const { input, todos, inputText, addTodo, deleteTodo, toggleTodo, counterPendingTasks, deletePendingTask, completedCount } = useTodos();
 
   return (
-    <div className="min-h-screen bg-indigo-900 flex items-center justify-center p-4">
-      {/* Contenedor Principal */}
+    <div className="relative min-h-screen bg-indigo-900 flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
-
-        {/* Header */}
         <div className="bg-pink-500-600 p-6">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className='text-black'>Listado de Tareas</span>
           </h1>
         </div>
-
         <div className="p-6">
-          {/* Formulario de Entrada */}
           <form
             onSubmit={addTodo}
             className="flex gap-2 mb-8">
@@ -37,7 +32,6 @@ const App: React.FC = () => {
             </button>
           </form>
 
-          {/* Lista de Tareas */}
           <div className="space-y-3">
             {todos.map((todo) => (
               <div
@@ -45,7 +39,6 @@ const App: React.FC = () => {
                 className="flex items-center justify-between p-4 bg-white border border-slate-100 rounded-xl hover:shadow-md transition-shadow group"
               >
                 <div className="flex items-center gap-3">
-                  {/* Botón de Checkbox */}
                   <button
                     onClick={() => toggleTodo(todo.id)}
                     className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${todo.completed ? 'bg-indigo-500 border-indigo-500' : 'text-indigo-500 hover:border-indigo-700'
@@ -58,13 +51,11 @@ const App: React.FC = () => {
                     )}
                   </button>
 
-                  {/* Texto de la tarea dinámico */}
                   <span className={`font-medium ${todo.completed ? 'text-slate-400 line-through' : 'text-slate-700'}`}>
                     {todo.text}
                   </span>
                 </div>
 
-                {/* Botón de eliminar */}
                 <button
                   onClick={() => deleteTodo(todo.id)}
                   className="text-gray-600 hover:text-red-500 transition-colors">
@@ -75,25 +66,29 @@ const App: React.FC = () => {
               </div>
             ))}
 
-            {/* Mensaje si no hay tareas */}
             {todos.length === 0 && (
-              <p className="text-center text-slate-400 text-sm italic">No hay tareas pendientes. ¡A descansar!</p>
+              <p className="text-center text-slate-700 text-sm italic">No hay tareas pendientes. ¡A descansar!</p>
             )}
           </div>
 
-          {/* Footer / Stats */}
-          <div className="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center text-sm text-slate-400">
+          <div className="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center text-sm text-black">
             {counterPendingTasks === 0 ? (
-              <p>¡Todo listo! No hay tareas.</p>
+              <p className='text-slate-700'>¡Todo listo! No hay tareas.</p>
             ) : (
-              <p>Tienes {counterPendingTasks} tareas pendientes</p>
+              <p className='text-slate-400'>Tienes <span className='text-black'>{counterPendingTasks}</span> tareas pendientes</p>
             )}
-            <button
-              onClick={deletePendingTask}
-              className="hover:text-indigo-600 transition-colors">Limpiar completadas</button>
+            {completedCount > 0 && (
+              <button
+                onClick={deletePendingTask}
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-indigo-200"
+              >
+                Limpiar completadas
+              </button>
+            )}
           </div>
         </div>
       </div>
+      <div className='absolute bottom-5 text-slate-200'>Made with love by <a className='text-pink-600' href="https://github.com/BrianAlexis">Brian</a></div>
     </div>
   );
 };
