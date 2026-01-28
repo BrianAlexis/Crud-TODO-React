@@ -6,8 +6,8 @@ const App: React.FC = () => {
   const { input, todos, inputText, addTodo, deleteTodo, toggleTodo, counterPendingTasks, deletePendingTask, completedCount } = useTodos();
 
   return (
-    <div className="relative min-h-screen bg-indigo-900 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+    <div className="relative min-h-screen bg-linear-to-br from-indigo-500 via-indigo-500 to-pink-500 animated-background flex flex-col items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden animate-fade-in-up">
         <div className="bg-pink-500-600 p-6">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className='text-black'>Listado de Tareas</span>
@@ -36,7 +36,7 @@ const App: React.FC = () => {
             {todos.map((todo) => (
               <div
                 key={todo.id}
-                className="flex items-center justify-between p-4 bg-white border border-slate-100 rounded-xl hover:shadow-md transition-shadow group"
+                className="flex items-center justify-between p-4 bg-white border border-slate-300 rounded-xl hover:shadow-md transition-shadow group"
               >
                 <div className="flex items-center gap-3">
                   <button
@@ -88,7 +88,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='absolute bottom-5 text-slate-200'>Made with love by <a className='text-pink-600' href="https://github.com/BrianAlexis">Brian</a></div>
+      <div className='absolute bottom-5 text-slate-200'>Made with love by <a className='text-indigo-950' href="https://github.com/BrianAlexis">Brian</a></div>
     </div>
   );
 };
