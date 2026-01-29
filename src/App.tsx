@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTodos } from "./hooks/useTodo";
 
 
 const App: React.FC = () => {
   const { input, todos, inputText, addTodo, deleteTodo, toggleTodo, counterPendingTasks, deletePendingTask, completedCount } = useTodos();
 
+  useEffect(() => {
+    localStorage.setItem("todos_app", JSON.stringify(todos));
+  }, [todos]);
+
   return (
-    <div className="relative min-h-screen bg-linear-to-br from-indigo-500 via-indigo-500 to-pink-500 animated-background flex flex-col items-center justify-center p-4">
+    <div className="relative min-h-screen bg-linear-to-br from-slate-800 via-slate-900 to-pink-800 animated-background flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden animate-fade-in-up">
         <div className="bg-pink-500-600 p-6">
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
@@ -88,7 +92,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='absolute bottom-5 text-slate-200'>Made with love by <a className='text-indigo-950' href="https://github.com/BrianAlexis">Brian</a></div>
+      <div className='absolute bottom-5 text-slate-200'>Made with love by <a className='underline' target='_blank' href="https://github.com/BrianAlexis">Brian</a></div>
     </div>
   );
 };

@@ -4,10 +4,12 @@ import { useSound } from './useSound';
 
 export const useTodos = () => {
     const [input, setInput] = useState("")
-    const [todos, setTodos] = useState<Todo[]>([]);
+    const [todos, setTodos] = useState<Todo[]>(() => {
+        const savedTodos = localStorage.getItem("todos_app");
+        return savedTodos ? JSON.parse(savedTodos) : [];
+    });
     const completedCount = todos.filter(todo => todo.completed).length;
 
-    // Sounds
     const keyboardTypingSound = useSound('/sounds/keyboard_typing.mp3');
     const addNewTodoSound = useSound('/sounds/success.mp3');
     const trashSound = useSound('/sounds/trash.mp3');
@@ -60,7 +62,6 @@ export const useTodos = () => {
         trashSound();
     }
 
-    // Devolvemos todo lo que la UI necesita usar
     return {
         input,
         todos,

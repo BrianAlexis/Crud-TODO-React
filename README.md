@@ -1,23 +1,23 @@
 # 📝 TaskMaster - CRUD TODO App
 
-¡Bienvenido a mi aplicación de tareas! Este proyecto es un CRUD (Create, Read, Update, Delete) construido con **React** y **TypeScript**, enfocado en una arquitectura limpia y una experiencia de usuario interactiva mediante sonidos.
+Welcome to my task management application! This project is a CRUD (Create, Read, Update, Delete) application built with **React** and **TypeScript**, focused on a clean architecture and an interactive user experience through sound feedback.
 
-## 🚀 Características
+## 🚀 Features
 
-- **Gestión Completa de Tareas**: Crea, marca como completadas y elimina tareas de forma sencilla.
-- **Feedback Auditivo**: Sonidos de tecleo al escribir y sonido de éxito al añadir tareas.
-- **Arquitectura Limpia**: Lógica separada en **Custom Hooks** (`useTodos`, `useSound`) y UI dividida en componentes reutilizables.
-- **Contador Dinámico**: Visualización en tiempo real de tareas pendientes.
-- **Persistencia**: Tus tareas se guardan en el `localStorage` (próximamente).
-- **Diseño Moderno**: Interfaz estilizada con **Tailwind CSS**.
+- **Full Task Management**: Easily create, mark as completed, and delete tasks.
+- **Auditory Feedback**: Typing sounds while writing and success sounds when adding tasks.
+- **Clean Architecture**: Logic separated into **Custom Hooks** (`useTodos`, `useSound`) and UI divided into reusable components.
+- **Dynamic Counter**: Real-time visualization of pending tasks.
+- **Persistence**: Your tasks are automatically saved in **localStorage**.
+- **Modern Design**: Stylized interface built with **Tailwind CSS**, featuring animated gradients, grainy textures, and smooth entry animations.
 
-## 🛠️ Tecnologías Usadas
+## 🛠️ Tech Stack
 
-- [React.js](https://reactjs.org/) - Biblioteca para la interfaz de usuario.
-- [TypeScript](https://www.typescriptlang.org/) - Para un código más seguro y robusto.
-- [Tailwind CSS](https://tailwindcss.com/) - Para el diseño responsivo y moderno.
-- [Vite](https://vitejs.dev/) - Herramienta de construcción ultrarrápida.
+- [React.js](https://reactjs.org/) - UI Library.
+- [TypeScript](https://www.typescriptlang.org/) - For safer and more robust code.
+- [Tailwind CSS](https://tailwindcss.com/) - For responsive and modern styling.
+- [Vite](https://vitejs.dev/) - Ultra-fast build tool.
 
-## 📦 Visualización
+## 📦 Live Demo
 
-1. **Para visualizar correctamente este proyecto haz click en el link a la derecha de este repositorio.**
+1. **To view this project live, click on the link provided in the "About" or "Website" section on the right side of this repository.**

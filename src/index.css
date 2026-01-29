@@ -3,9 +3,9 @@
 .animated-background {
   background-size: 400%;
 
-  -webkit-animation: animation 20s ease-in-out infinite;
-  -moz-animation: animation 20s ease-in-out infinite;
-  animation: animation 20s ease-in-out infinite alternate;
+  -webkit-animation: animation 30s ease-in-out infinite;
+  -moz-animation: animation 30s ease-in-out infinite;
+  animation: animation 30s ease-in-out infinite alternate;
 }
 
 @keyframes animation {
